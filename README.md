@@ -7,13 +7,14 @@ A standard for Flux store objects and compatible action objects
 
 ## Problem
 
-1. Status data of stored in flux stores is often derived by the values(comparing current value with default values) or based on the events happened until now going against reactive programming.
-2. When multiple actions(same action with different inputs) to data stored in flux stores is prone to query - data mismatch due to race conditions when same action is triggered multiple times.
-3. Need for a data cache and making it navigable through history.
+1. When multiple actions(same action with different inputs) to data stored in flux stores is prone to query - data mismatch due to race conditions.
+2. Need for a data cache and making it navigable through history.
+3. Status of data stored in flux stores is often derived by the values(comparing current value with default values) or based on the events occured until now going against reactive programming.
+
 
 ### Design goals
 
-1. Schema of data stored should be progressively enhanced so that all data accessors are unaffected by changes in store.
+1. Schema of data stored should be progressively enhanced so that all data reads/accessors are unaffected by changes in store.
 2. Should be compliant with existing standards and ecosystem (Do no re-invent the wheel).
 
 ### Datapoint in a store
