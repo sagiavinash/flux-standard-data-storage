@@ -72,9 +72,11 @@ The nextQueries property is `stack` (LIFO) of queries.
 
 ### Actions
 
+an action should be [flux-standard-action](https://github.com/acdlite/flux-standard-action) compliant.
+
 a datapoint MAY
 
-- be updated by a sync event and the action `type` should be prefixed with `LOAD` keyword (ex: LOAD_SEARCH_RESULTS)
+- be updated by a sync event and the action `type` should be prefixed with `LOAD` keyword
   - the LOAD event should have the `query` as a property of the `meta` object
   - the LOAD event should have the `data` as the value or propery of the `payload`
 - be updated by an async event and it should be done via two actions with action `type ` prefixed by `LOADING` and `LOADED` keywords.
