@@ -33,9 +33,9 @@ a dataPoint MAY
 - have `prevQueries` when `query` & `cache` properties are present
 - have `nextQueries` when `query`, `cache`& `prevQueries` properties are present
 
-a dataPoint MAY NOT
+a dataPoint MUST NOT
 
-- have a property which is not listed above (standard has to be extended to accomodate them)
+- have a property which is not listed above
 
 ### `data`
 
@@ -53,9 +53,9 @@ The isLoading property is a boolean, set to true by an action of LOADING type an
 
 The query property MAY be of any value.
 
-The value of query should be sent in `payload` property of a LOADING action (FSA).
+The value of query should be sent in `payload` property of a LOADING action ([FSA](https://github.com/acdlite/flux-standard-action)).
 
-The value of query should be sent in `meta` property of a LOADED action (FSA).
+The value of query should be sent in `meta` property of a LOADED action ([FSA](https://github.com/acdlite/flux-standard-action)).
 
 ### `cache`
 
@@ -72,7 +72,7 @@ The nextQueries property is `stack` (LIFO) of queries.
 
 ### Actions
 
-an action should be [flux-standard-action](https://github.com/acdlite/flux-standard-action) compliant.
+an action should be [flux-standard-action](https://github.com/acdlite/flux-standard-action) (FSA) compliant.
 
 a datapoint MAY
 
@@ -109,7 +109,7 @@ datapoint: {
 ###### 2. Loading & error states
 
 ``` js
-/// Flux Actions (Flux Standard Action Compliant)
+/// Flux Actions (FSA Compliant)
 
 dispatch({
   type: actions.LOADING_DATAPOINT,
@@ -167,7 +167,7 @@ reducer(state, action) {
 ###### 3. Datapoint with a corresponding query
 
 ``` js
-/// Flux Actions (Flux Standard Action Compliant)
+/// Flux Actions (FSA Compliant)
 
 dispatch({
   type: actions.LOADING_DATAPOINT,
@@ -242,7 +242,7 @@ reducer(state, action) {
 ###### 4. Datapoint with cache
 
 ``` js
-/// Flux Actions (Flux Standard Action Compliant)
+/// Flux Actions (FSA Compliant)
 
 const cachedValue = _.find(store.getState().datapoint.cache, (entry) => isEqual(query, entry.query));
 
@@ -341,7 +341,7 @@ reducer(state, action) {
 ###### 5. Datapoint with queryHistory
 
 ``` js
-/// Flux Actions (Flux Standard Action Compliant)
+/// Flux Actions (FSA Compliant)
 
 const cachedValue = _.find(store.getState().datapoint.cache, (entry) => isEqual(query, entry.query));
 
@@ -441,7 +441,7 @@ reducer(state, action) {
 ###### 6. Datapoint with navigable queryHistory
 
 ``` js
-/// Flux Actions (Flux Standard Action Compliant)
+/// Flux Actions (FSA Compliant)
 
 const cachedValue = _.find(store.getState().datapoint.cache, (entry) => isEqual(query, entry.query));
 
